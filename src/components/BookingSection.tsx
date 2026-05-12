@@ -6,30 +6,21 @@ import { Button } from "./Button";
 
 type BookingForm = {
   fullName: string;
-  email: string;
   phone: string;
-  vehicle: string;
   service: string;
-  preferredDate: string;
   notes: string;
 };
 
 const initialState: BookingForm = {
   fullName: "",
-  email: "",
   phone: "",
-  vehicle: "",
   service: "performance-tuning",
-  preferredDate: "",
   notes: "",
 };
 
 const serviceOptions = [
   { value: "performance-tuning", label: "Performance Tuning" },
-  { value: "advanced-diagnostics", label: "Advanced Diagnostics" },
   { value: "expert-maintenance", label: "Expert Maintenance" },
-  { value: "body-protection", label: "Body & Protection" },
-  { value: "electrical-works", label: "Electrical Works" },
   { value: "track-prep", label: "Track Prep" },
 ];
 
@@ -76,11 +67,7 @@ export const BookingSection = () => {
           Reserve an appointment for performance tuning, expert maintenance, or track prep.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
-          aria-label="Service booking form"
-        >
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5" aria-label="Service booking form">
           <label className="flex flex-col gap-2">
             <span className="text-sm font-semibold uppercase tracking-wide">Full name</span>
             <input
@@ -93,35 +80,12 @@ export const BookingSection = () => {
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="text-sm font-semibold uppercase tracking-wide">Email</span>
-            <input
-              required
-              type="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="rounded-xl border border-white/15 bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
-            />
-          </label>
-
-          <label className="flex flex-col gap-2">
             <span className="text-sm font-semibold uppercase tracking-wide">Phone</span>
             <input
               required
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="rounded-xl border border-white/15 bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
-            />
-          </label>
-
-          <label className="flex flex-col gap-2">
-            <span className="text-sm font-semibold uppercase tracking-wide">Vehicle</span>
-            <input
-              required
-              type="text"
-              placeholder="Model / Year"
-              value={formData.vehicle}
-              onChange={(e) => setFormData({ ...formData, vehicle: e.target.value })}
               className="rounded-xl border border-white/15 bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
             />
           </label>
@@ -143,19 +107,6 @@ export const BookingSection = () => {
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="text-sm font-semibold uppercase tracking-wide">Preferred date</span>
-            <input
-              required
-              type="date"
-              value={formData.preferredDate}
-              onChange={(e) =>
-                setFormData({ ...formData, preferredDate: e.target.value })
-              }
-              className="rounded-xl border border-white/15 bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
-            />
-          </label>
-
-          <label className="md:col-span-2 flex flex-col gap-2">
             <span className="text-sm font-semibold uppercase tracking-wide">
               Service notes
             </span>
@@ -168,7 +119,7 @@ export const BookingSection = () => {
             />
           </label>
 
-          <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <Button type="submit" size="lg">
               Submit Booking
             </Button>
@@ -179,7 +130,7 @@ export const BookingSection = () => {
               Need immediate help? Call +49 711 123 4567
             </a>
           </div>
-          <p className="md:col-span-2 text-sm text-green-400 min-h-6" aria-live="polite">
+          <p className="text-sm text-green-400 min-h-6" aria-live="polite">
             {status}
           </p>
         </form>

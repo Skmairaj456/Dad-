@@ -45,8 +45,8 @@ export const Navbar = () => {
               <p className="text-base sm:text-lg font-black tracking-tight uppercase truncate">
                 Deutsche <span className="text-accent">Auto Den</span>
               </p>
-              <p className="hidden sm:block text-[10px] text-white/60 uppercase tracking-[0.28em] mt-1">
-                Performance Garage
+              <p className="mt-1 max-w-[210px] text-[8px] leading-tight text-white/60 uppercase tracking-[0.16em] sm:max-w-none sm:text-[10px] sm:tracking-[0.28em]">
+                DAD MEETS YOUR CAR NEEDS
               </p>
             </div>
           </a>

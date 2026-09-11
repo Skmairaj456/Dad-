@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deutsche Auto Den | Precision German Engineering",
-  description: "The ultimate car workshop for performance tuning, diagnostics, and high-end automotive care.",
+  title: "Deutsche Auto Den | DAD MEETS YOUR CAR NEEDS",
+  description: "DAD Garage — DAD MEETS YOUR CAR NEEDS. Premium automotive service, diagnostics, and performance care.",
 };
 
 export default function RootLayout({

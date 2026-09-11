@@ -124,6 +124,9 @@ export const Hero = () => {
               <span className="block text-gradient">Engineered</span>
               <span className="block text-brand-gradient">Excellence.</span>
             </h1>
+            <p className="mx-auto mb-5 max-w-xl text-[clamp(1rem,3.5vw,1.35rem)] font-bold uppercase leading-tight tracking-[0.14em] text-accent sm:mb-6 sm:text-2xl">
+              DAD MEETS YOUR CAR NEEDS
+            </p>
             <p className="max-w-2xl mx-auto text-base md:text-xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
               Welcome to <span className="text-white font-semibold">Deutsche Auto Den</span>.
               Where German precision meets raw power. Experience the ultimate in automotive care and performance tuning.

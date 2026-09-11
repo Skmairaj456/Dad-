@@ -25,6 +25,9 @@ export const Footer = () => {
             <p className="text-muted-foreground leading-relaxed">
               Precision German engineering for the modern automotive enthusiast. Experience the peak of performance.
             </p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
+              DAD MEETS YOUR CAR NEEDS
+            </p>
             <div className="flex gap-4">
               {[Globe, MessageSquare, Share2].map((Icon, i) => (
                 <a

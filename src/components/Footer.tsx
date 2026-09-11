@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer id="contact" className="bg-muted/30 pt-24 pb-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer id="contact" className="bg-muted/30 pt-16 sm:pt-24 pb-10 sm:pb-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <Image
@@ -16,7 +16,7 @@ export const Footer = () => {
                 alt="Deutsche Auto Den logo"
                 width={42}
                 height={42}
-                className="rounded-md border border-white/20 object-cover"
+                className="object-cover mix-blend-screen"
               />
               <span className="text-xl font-black tracking-tighter uppercase">
                 Deutsche <span className="text-accent">Auto Den</span>
@@ -31,7 +31,7 @@ export const Footer = () => {
                   key={i}
                   href={i === 0 ? "https://deutscheautoden.com" : i === 1 ? "mailto:contact@deutscheautoden.com" : "#contact"}
                   aria-label={i === 0 ? "Visit website" : i === 1 ? "Email us" : "Share this page"}
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
+                  className="w-10 h-10 border border-white/10 bg-white/[0.03] flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
                 >
                   <Icon size={20} />
                 </a>
@@ -61,12 +61,12 @@ export const Footer = () => {
             <ul className="space-y-4 text-muted-foreground">
               <li className="flex gap-3">
                 <MapPin className="text-accent flex-shrink-0" size={20} />
-                <span>123 Autobahn Way, <br />Stuttgart Industrial, DE</span>
+                <span>Central Park, <br /> Kondapur, Hyderabad, Telangana</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="text-accent flex-shrink-0" size={20} />
                 <a href="tel:+497111234567" className="hover:text-accent transition-colors">
-                  +49 711 123 4567
+                  +91 9989195454
                 </a>
               </li>
               <li className="flex gap-3">
@@ -85,12 +85,12 @@ export const Footer = () => {
               <label htmlFor="newsletter-email" className="sr-only">
                 Email address
               </label>
-              <input 
+                <input 
                 id="newsletter-email"
                 type="email" 
                 placeholder="Your email address"
                 required
-                className="bg-background border border-white/10 rounded-full px-6 py-3 focus:outline-none focus:border-accent transition-colors"
+                className="bg-background border border-white/10 rounded-sm px-4 py-3 focus:outline-none focus:border-accent transition-colors"
               />
               <Button type="submit">Subscribe</Button>
             </form>

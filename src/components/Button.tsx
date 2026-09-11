@@ -18,7 +18,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const variants = {
-    primary: "bg-accent text-accent-foreground hover:bg-accent/90",
+    primary: "bg-accent brand-button text-accent-foreground",
     outline: "border border-white/10 bg-transparent hover:bg-white/5",
     ghost: "bg-transparent hover:bg-white/5",
   };
@@ -31,10 +31,8 @@ export const Button = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
       className={cn(
-        "relative inline-flex items-center justify-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50",
+        "relative inline-flex min-h-11 items-center justify-center rounded-sm border border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50",
         variants[variant],
         sizes[size],
         className

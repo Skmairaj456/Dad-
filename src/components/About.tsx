@@ -23,21 +23,21 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-16 sm:py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-5"
+          className="max-w-4xl text-[clamp(2rem,9vw,3.75rem)] md:text-6xl font-black uppercase tracking-tighter mb-5 leading-[0.95]"
         >
-          Built for Drivers. <span className="text-accent">Trusted by Experts.</span>
+          Built for Drivers. <span className="text-brand-gradient">Trusted by Experts.</span>
         </motion.h2>
-        <p className="max-w-3xl text-muted-foreground mb-12 text-lg">
+        <p className="max-w-3xl text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg leading-7">
           Deutsche Auto Den combines dealership-grade diagnostics with custom
           performance craftsmanship for daily-driven and track-focused machines.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10">
           {highlights.map((item, index) => (
             <motion.article
               key={item.title}
@@ -45,9 +45,11 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-2xl border border-white/10 bg-muted/40 p-6"
+              className="border-b border-white/10 pt-7 pb-8"
             >
-              <item.icon className="text-accent mb-4" size={26} />
+              <div className="flex items-center justify-between mb-6">
+                <item.icon className="text-accent" size={24} />
+              </div>
               <h3 className="text-lg font-bold uppercase mb-2">{item.title}</h3>
               <p className="text-muted-foreground">{item.text}</p>
             </motion.article>

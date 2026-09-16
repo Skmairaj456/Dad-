@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./Button";
 
@@ -103,6 +103,15 @@ export const BookingSection = () => {
   const [status, setStatus] = useState("");
   const [statusType, setStatusType] = useState<"success" | "error">("success");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    const requestedService = new URLSearchParams(window.location.search).get("service");
+    if (!requestedService || !serviceOptions.some((option) => option.value === requestedService)) return;
+    const frameId = window.requestAnimationFrame(() => {
+      setFormData((current) => ({ ...current, service: requestedService }));
+    });
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -291,7 +300,7 @@ export const BookingSection = () => {
               {isSubmitting ? "Sending..." : "Submit Booking"}
             </Button>
             <a
-              href="tel:+497111234567"
+              href="tel:+919989195454"
               className="text-sm text-accent underline underline-offset-4"
             >
               Need immediate help? Call +91 9989195454

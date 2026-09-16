@@ -1,19 +1,37 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, MapPin, Menu, X } from "lucide-react";
+import Link from "next/link";
+
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Booking", href: "/booking" },
+];
+
+const extendedLinks = [
+  { label: "SOS / RSA", href: "/rsa" },
+  { label: "About DAD", href: "/about" },
+  { label: "Our Vision", href: "/vision" },
+  { label: "Why Choose DAD", href: "/why-choose-dad" },
+  { label: "Technology", href: "/technology" },
+  { label: "Performance", href: "/performance" },
+  { label: "Founders", href: "/founders" },
+  { label: "Contact", href: "/contact" },
+];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const { scrollY } = useScroll();
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
     ["rgba(5, 5, 5, 0)", "rgba(5, 5, 5, 0.55)"]
   );
-  const bookServiceLink = useMemo(() => "#book-service", []);
-
   useEffect(() => {
     if (!isOpen) return;
 
@@ -40,22 +58,39 @@ export const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="h-14 sm:h-16 bg-transparent pl-1 pr-1 md:pl-0 md:pr-0 flex items-center justify-between"
         >
-          <a href="#" className="flex items-center gap-3 min-w-0">
+          <Link href="/" className="flex min-w-0 items-center">
             <div className="leading-none min-w-0">
-              <p className="text-base sm:text-lg font-black tracking-tight uppercase truncate">
+              <p className="brand-name truncate text-[0.95rem] font-black uppercase tracking-[0.08em] sm:text-lg">
                 Deutsche <span className="text-accent">Auto Den</span>
               </p>
-              <p className="mt-1 max-w-[210px] text-[8px] leading-tight text-white/60 uppercase tracking-[0.16em] sm:max-w-none sm:text-[10px] sm:tracking-[0.28em]">
+              <p className="mt-1 max-w-[230px] text-[9px] leading-tight text-white/75 uppercase tracking-[0.13em] sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
                 DAD MEETS YOUR CAR NEEDS
               </p>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden items-center gap-7 md:flex">
+            <nav className="flex items-center gap-6" aria-label="Primary navigation">
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`nav-link ${isActive ? "text-white" : ""}`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </nav>
+            <a href="https://maps.app.goo.gl/XkDGHJzZ2Y3i8Zq38" target="_blank" rel="noreferrer" className="location-mark" aria-label="DAD location in Hyderabad">
+              <MapPin size={14} /> Hyderabad
+            </a>
             <a
-              href={bookServiceLink}
-              className="brand-button inline-flex items-center gap-2 rounded-sm px-5 py-2.5 text-[11px] lg:text-xs font-bold uppercase tracking-[0.2em] text-white"
+              href="/booking"
+              className="brand-button inline-flex items-center gap-2 rounded-sm px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white lg:text-xs"
             >
               Book Now
               <ArrowUpRight size={14} />
@@ -83,7 +118,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           className="md:hidden mx-4 sm:mx-6 mb-4 border border-white/15 bg-black/95 px-5 py-5 flex flex-col gap-2"
         >
-          {[{ label: "Services", href: "#services" }, { label: "About Us", href: "#about" }, { label: "Performance", href: "#performance" }, { label: "Contact", href: "#contact" }].map((link) => (
+          {[...links, ...extendedLinks].map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -94,7 +129,7 @@ export const Navbar = () => {
             </a>
           ))}
           <a
-            href={bookServiceLink}
+            href="/booking"
             className="brand-button mt-2 inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white"
             onClick={() => setIsOpen(false)}
           >

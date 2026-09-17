@@ -47,7 +47,7 @@ export function FinalCta() {
           <div className="final-contact-list">
             <a href="https://maps.app.goo.gl/XkDGHJzZ2Y3i8Zq38" target="_blank" rel="noreferrer"><MapPin size={15} /><span><small>Find DAD</small>Hyderabad</span></a>
             <a href="tel:+919989195454"><Phone size={15} /><span><small>Call DAD</small>+91 9989195454</span></a>
-            <a href="mailto:contact@deutscheautoden.com"><Mail size={15} /><span><small>Email DAD</small>contact@deutscheautoden.com</span></a>
+            <a href="mailto:deutsche.auto.den@gmail.com"><Mail size={15} /><span><small>Email DAD</small>deutsche.auto.den@gmail.com</span></a>
             <a href="https://www.instagram.com/deutsche_auto_den/" target="_blank" rel="noreferrer"><Camera size={15} /><span><small>Instagram</small>@deutsche_auto_den</span></a>
             <a href="http://www.youtube.com/@DeutscheAutoDen" target="_blank" rel="noreferrer"><Play size={15} /><span><small>YouTube</small>Deutsche Auto Den</span></a>
           </div>

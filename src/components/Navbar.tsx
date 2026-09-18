@@ -10,6 +10,7 @@ const links = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Booking", href: "/booking" },
+  { label: "Free Inspection", href: "/campaign" },
 ];
 
 const extendedLinks = [
@@ -60,7 +61,7 @@ export const Navbar = () => {
         >
           <Link href="/" className="flex min-w-0 items-center">
             <div className="leading-none min-w-0">
-              <p className="brand-name truncate text-[0.95rem] font-black uppercase tracking-[0.08em] sm:text-lg">
+              <p className="brand-name whitespace-nowrap text-[0.82rem] font-black uppercase tracking-[0.05em] sm:text-lg md:text-[0.9rem] lg:text-lg">
                 Deutsche <span className="text-accent">Auto Den</span>
               </p>
               <p className="mt-1 max-w-[230px] text-[9px] leading-tight text-white/75 uppercase tracking-[0.13em] sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">

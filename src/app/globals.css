@@ -254,8 +254,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .campaign-home-section.is-closed .campaign-home-banner { border-color: var(--line); min-height: 130px; }
 .campaign-home-section.is-closed .campaign-home-cta { color: var(--muted-foreground); }
 .campaign-home-section--hero { padding: 24px 0 0; }
-.campaign-home-section--hero .campaign-home-banner { min-height: 112px; padding: 18px clamp(1rem, 3vw, 2rem); }
-.campaign-home-section--hero .campaign-home-meta { gap: 12px; }
+.campaign-home-section--hero .campaign-home-banner { min-height: 76px; padding: 6px clamp(1rem, 3vw, 2rem); }
+.campaign-home-section--hero .campaign-home-copy h2 { font-size: clamp(1.05rem, 1.8vw, 1.55rem); margin-top: 4px; }
+.campaign-home-section--hero .campaign-home-support { font-size: .74rem; margin-top: 3px; }
+.campaign-home-section--hero .campaign-home-meta { gap: 6px; }
+.campaign-home-section--hero .campaign-home-dates { font-size: 10px; }
+.campaign-home-section--hero .campaign-home-cta { font-size: 10px; min-height: 36px; }
 
 @media (max-width: 640px) {
   .campaign-home-section { padding-bottom: clamp(3.5rem, 10vw, 5rem); }
@@ -268,6 +272,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .campaign-home-meta { align-items: flex-start; gap: 15px; min-width: 0; }
   .campaign-home-dates { white-space: normal; }
   .campaign-home-cta { min-height: 44px; }
+}
+
+@media (min-width: 801px) and (max-height: 850px) {
+  .hero-section { padding-top: 80px; }
 }
 
 .page-shell { min-height: 60vh; padding-top: clamp(76px, 8vw, 110px); }

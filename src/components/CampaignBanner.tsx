@@ -6,7 +6,7 @@ export function CampaignBanner() {
   const isActive = isCampaignActive();
 
   return (
-    <section className={`campaign-home-section ${isActive ? "is-active" : "is-closed"}`} aria-labelledby="campaign-home-title">
+    <section className={`campaign-home-section campaign-home-section--hero ${isActive ? "is-active" : "is-closed"}`} aria-labelledby="campaign-home-title">
       <Link href="/campaign" className="campaign-home-banner">
         <div className="campaign-home-copy">
           <p className="eyebrow">{isActive ? "Limited Campaign" : "Campaign Closed"}</p>

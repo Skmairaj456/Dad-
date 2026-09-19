@@ -253,9 +253,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .campaign-home-banner:hover .campaign-home-cta svg { transform: translate(3px, -3px); }
 .campaign-home-section.is-closed .campaign-home-banner { border-color: var(--line); min-height: 130px; }
 .campaign-home-section.is-closed .campaign-home-cta { color: var(--muted-foreground); }
+.campaign-home-section--hero { padding: 24px 0 0; }
+.campaign-home-section--hero .campaign-home-banner { min-height: 112px; padding: 18px clamp(1rem, 3vw, 2rem); }
+.campaign-home-section--hero .campaign-home-meta { gap: 12px; }
 
 @media (max-width: 640px) {
   .campaign-home-section { padding-bottom: clamp(3.5rem, 10vw, 5rem); }
+  .campaign-home-section--hero { padding: 20px 0 0; }
+  .campaign-home-section--hero .campaign-home-banner { gap: 12px; min-height: 0; padding: 14px; }
+  .campaign-home-section--hero .campaign-home-copy h2 { font-size: 1.35rem; margin-top: 7px; }
+  .campaign-home-section--hero .campaign-home-support { font-size: .82rem; margin-top: 6px; }
+  .campaign-home-section--hero .campaign-home-meta { gap: 8px; }
   .campaign-home-banner { align-items: flex-start; flex-direction: column; gap: 1.5rem; min-height: 0; padding: 1.5rem; }
   .campaign-home-meta { align-items: flex-start; gap: 15px; min-width: 0; }
   .campaign-home-dates { white-space: normal; }
@@ -502,7 +510,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .final-cta-inner { gap: 35px; }
   .hero-brand-name { font-size: clamp(2.25rem, 11vw, 3.3rem); }
   .hero-tagline { letter-spacing: 0.16em; }
-  .hero-supporting-title { margin-top: 30px; }
+  .hero-supporting-title { margin-top: 20px; }
   .hero-supporting-copy { margin-bottom: 24px; }
   .rsa-intro { grid-template-columns: 1fr; }
   .rsa-panel-heading { align-items: flex-start; flex-direction: column; }

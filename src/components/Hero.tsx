@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "./Button";
+import { CampaignBanner } from "./CampaignBanner";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -31,7 +32,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="hero-section relative flex min-h-[min(780px,100svh)] items-center overflow-hidden pt-24 pb-12 sm:min-h-[680px] sm:pt-28 sm:pb-16 lg:min-h-screen">
+    <section className="hero-section relative flex min-h-[min(780px,100svh)] items-center overflow-hidden pt-12 pb-12 sm:min-h-[680px] sm:pt-28 sm:pb-16 lg:min-h-screen">
       {introVisible && (
         <motion.div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505]"
@@ -66,9 +67,9 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: introVisible ? 0 : 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mb-4 flex justify-center"
+          className="mx-auto mb-3 flex justify-center"
         >
-          <div className="relative h-[170px] w-[170px] sm:h-[210px] sm:w-[210px] lg:h-[240px] lg:w-[240px]">
+          <div className="relative h-[140px] w-[140px] sm:h-[210px] sm:w-[210px] lg:h-[240px] lg:w-[240px]">
             <Image
               src="/brand-logo.jpg"
               alt="DAD logo"
@@ -84,7 +85,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: introVisible ? 0 : 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="hero-brand-lockup mx-auto mb-5 mt-0 sm:mb-7"
+          className="hero-brand-lockup mx-auto mb-4 mt-0 sm:mb-7"
         >
           <div className="hero-identity">
             <p className="hero-brand-name">
@@ -110,6 +111,8 @@ export const Hero = () => {
           <p className="hero-supporting-copy">
             German precision for daily-driven and performance-focused machines.
           </p>
+
+          <CampaignBanner />
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button

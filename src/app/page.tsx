@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { CampaignBanner } from "@/components/CampaignBanner";
 import { FinalCta, HomeHub } from "@/components/HomeHub";
 import { Footer } from "@/components/Footer";
 
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="flex flex-col">
       <Hero />
       <HomeHub />
+      <CampaignBanner />
       <FinalCta />
       <Footer />
     </main>

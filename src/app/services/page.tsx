@@ -3,11 +3,14 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { PageShell } from "@/components/PageShell";
 import { ServicesPageContent } from "@/components/ServicesPageContent";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services | Deutsche Auto Den",
-  description: "Automotive maintenance, repair, diagnostics, and performance services from Deutsche Auto Den.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Car Service & Automotive Repairs in Hyderabad",
+  description: "Explore DAD services for maintenance, diagnostics, repair, brakes, handling, performance, and roadside assistance in Hyderabad.",
+  path: "/services",
+  keywords: ["car service Hyderabad", "automotive repairs Hyderabad", "engine diagnostics Hyderabad"],
+});
 
 export default function ServicesPage() {
   return (

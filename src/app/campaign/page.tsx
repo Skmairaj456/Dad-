@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { CampaignBooking } from "@/components/CampaignBooking";
 import { CAMPAIGN_END_DATE, CAMPAIGN_START_DATE, isCampaignActive } from "@/lib/campaign";
+import { createPageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Free Complete Car Inspection | Deutsche Auto Den",
-  description: "Book a free complete car inspection with Deutsche Auto Den during our limited-time campaign from 19 September to 27 September 2026.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Free Complete Car Inspection",
+  description: "Book a free complete car inspection with Deutsche Auto Den during the limited-time campaign from 19 September to 27 September 2026.",
+  path: "/campaign",
+});
 
 export default function CampaignPage() {
   return (

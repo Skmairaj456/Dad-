@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { ContentBand, DetailList, PageShell } from "@/components/PageShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Our Vision | Deutsche Auto Den", description: "The philosophy behind Deutsche Auto Den." };
+export const metadata: Metadata = createPageMetadata({
+	title: "Our Vision",
+	description: "The philosophy behind Deutsche Auto Den: clear communication, an engineering mindset, and long-term trust.",
+	path: "/vision",
+});
 
 export default function VisionPage() { return <><PageShell eyebrow="Our Vision" title={<>Build the workshop<br /><span>we would trust.</span></>} intro="DAD is growing toward a more considered kind of independent automotive care: technically serious, human in its communication, and disciplined in its craft."><ContentBand><p className="lead-copy">We want every visit to feel informed rather than opaque. That means listening carefully, diagnosing before prescribing, and treating performance as a responsibility as much as an ambition.</p></ContentBand><DetailList items={[{ title: "Clarity before complexity", text: "A good service conversation should make the next decision easier, not more confusing." }, { title: "Engineering mindset", text: "We look at the full system, the condition of the vehicle, and the way it is actually driven." }, { title: "Long-term trust", text: "The goal is not a single transaction. It is a vehicle and customer relationship that improves over time." }]} /></PageShell><Footer /></>; }

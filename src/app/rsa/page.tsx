@@ -1,6 +1,13 @@
 import { Footer } from "@/components/Footer";
 import { RsaForm } from "@/components/RsaForm";
 import { PageShell } from "@/components/PageShell";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Roadside Assistance in Hyderabad",
+  description: "Request chargeable Roadside Assistance from Deutsche Auto Den in and around Hyderabad.",
+  path: "/rsa",
+});
 
 export default function RsaPage() {
   return (

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/brand-logo.jpg"],
   },
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/icon.png" },
 };
 
 export default function RootLayout({

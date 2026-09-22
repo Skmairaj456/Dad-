@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -42,6 +42,11 @@ export const metadata: Metadata = {
   icons: { icon: "/icon.png" },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,20 +64,33 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "AutoRepair",
-              name: SITE_NAME,
-              url: SITE_URL,
-              description: SITE_DESCRIPTION,
-              logo: `${SITE_URL}/brand-logo.jpg`,
-              image: `${SITE_URL}/brand-logo.jpg`,
-              telephone: "+91 9989195454",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Hyderabad",
-                addressRegion: "Telangana",
-                addressCountry: "IN",
-              },
-              sameAs: SOCIAL_URLS,
+              "@graph": [
+                {
+                  "@type": "AutoRepair",
+                  "@id": `${SITE_URL}/#business`,
+                  name: SITE_NAME,
+                  url: `${SITE_URL}/`,
+                  description: SITE_DESCRIPTION,
+                  logo: `${SITE_URL}/brand-logo.jpg`,
+                  image: `${SITE_URL}/brand-logo.jpg`,
+                  telephone: "+91 9989195454",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Hyderabad",
+                    addressRegion: "Telangana",
+                    addressCountry: "IN",
+                  },
+                  sameAs: SOCIAL_URLS,
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
+                  name: SITE_NAME,
+                  url: `${SITE_URL}/`,
+                  publisher: { "@id": `${SITE_URL}/#business` },
+                  inLanguage: "en-IN",
+                },
+              ],
             }),
           }}
         />

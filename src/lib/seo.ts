@@ -9,6 +9,21 @@ export const SOCIAL_URLS = [
   "http://www.youtube.com/@DeutscheAutoDen",
 ];
 
+export const PUBLIC_SEO_PATHS = [
+  "/",
+  "/services",
+  "/booking",
+  "/about",
+  "/vision",
+  "/why-choose-dad",
+  "/technology",
+  "/performance",
+  "/founders",
+  "/contact",
+  "/campaign",
+  "/rsa",
+] as const;
+
 export function createPageMetadata({
   title,
   description,
